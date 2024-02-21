@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'date'
+
 # BEGIN
 module Model
   def self.included(base)

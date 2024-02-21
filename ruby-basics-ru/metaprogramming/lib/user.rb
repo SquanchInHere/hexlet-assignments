@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'model'
+require 'date'
 
 class User
   include Model
@@ -9,8 +10,3 @@ class User
   attribute :birthday, type: :datetime
   attribute :active, type: :boolean, default: false
 end
-
-user = User.new
-user.birthday = nil
-
-print user.attributes
