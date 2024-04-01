@@ -10,8 +10,4 @@ class AdminPolicy
 
     @app.call(env)
   end
-
-  def has_key?
-    false
-  end
 end
