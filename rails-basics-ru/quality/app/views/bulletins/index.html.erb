@@ -1,0 +1,8 @@
+<h1>Bulletins</h1>
+<nav class="navbar navbar-expand-lg">
+  <ul class="navbar-nav">
+    <% @bulletins.each do |v| %>
+      <li class="nav-item"><%= link_to v.title, bulletin_path(v.id), class: 'nav-link' %></li>
+    <% end %>
+  </ul>
+</nav>
