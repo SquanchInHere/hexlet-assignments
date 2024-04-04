@@ -1,0 +1,16 @@
+<h1>Tasks</h1>
+  <%= link_to 'Add new task', new_task_path %>
+  <hr />
+  <ul>
+  <% @tasks.each do |task| %>
+      <li>
+        <h4><%= link_to task.name,  task_path(task) %></h4>
+        <p><%= task.description %></p>
+        <p>Status: <%= task.status %></p>
+        <p>Creator: <%= task.creator %></p>
+        <p>Performer: <%= task.performer %></p>
+        <%= link_to 'Edit', edit_task_path(task) %>
+      </li>
+      <hr />
+  <% end %>
+  </ul>

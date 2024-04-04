@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Task 1
+  description: Task 1 Description
+  status: In progress
+  creator: John Doe
+  performer: Joni Doe
+  completed: false
+
+two:
+  name: Task 2
+  description: Task 2 Description
+  status: In progress
+  creator: Joni Doe
+  performer: John Doe
+  completed: false
