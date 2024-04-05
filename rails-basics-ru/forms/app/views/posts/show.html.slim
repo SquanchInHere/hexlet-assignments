@@ -1,0 +1,14 @@
+h1
+  = @post.title
+
+p
+  = @post.body
+
+hr
+
+small.text-muted
+  | "Created at: #{@post.created_at.strftime("%d.%m.%Y")}"
+
+hr
+  .p-1
+    = render 'posts/shared/back_button'
