@@ -5,18 +5,18 @@ h4
 p
   = @task.description
 p
-  |  Creator: 
+  |  Creator:
   = @task.creator
 p
-  | Status: 
+  | Status:
   = @task.status
 p
-  | Creator: 
+  | Creator:
   = @task.creator
 p
-  | Performer: 
+  | Performer:
   = @task.performer
 hr
 = link_to '< Back', root_path
 = link_to 'Edit', edit_task_path(@task)
-= button_to 'Delete', task_path(@task), method: :delete, data: { confirm: "Are you sure?" }
+= button_to 'Delete', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' }

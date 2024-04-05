@@ -11,13 +11,13 @@ ul
     p
       = task.description
     p
-      | Status: 
+      | Status:
       = task.status
     p
-      | Creator: 
+      | Creator:
       = task.creator
     p
-      | Performer: 
+      | Performer:
       = task.performer
     = link_to 'Edit', edit_task_path(task)
     hr
