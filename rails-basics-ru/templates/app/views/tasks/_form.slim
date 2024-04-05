@@ -1,0 +1,48 @@
+= form_with model: task do |form|
+  div
+    = form.label :name
+    br
+    = form.text_field :name
+    br
+    - task.errors.full_messages_for(:name).each do |message|
+      = message
+      br
+  div
+    = form.label :description
+    br
+    = form.text_field :description
+    br
+  div
+    = form.label :status
+    br
+    = form.text_field :status
+    br
+    - task.errors.full_messages_for(:status).each do |message|
+      = message
+      br
+  div
+    = form.label :creator
+    br
+    = form.text_field :creator
+    br
+    - task.errors.full_messages_for(:creator).each do |message|
+      = message
+      br
+  div
+    = form.label :performer
+    br
+    = form.text_field :performer
+    br
+    - task.errors.full_messages_for(:performer).each do |message|
+      = message
+      br
+  div
+    = form.label :completed
+    br
+    = form.check_box :completed
+    br
+    - task.errors.full_messages_for(:completed).each do |message|
+      = message
+      br
+  div
+    = form.submit

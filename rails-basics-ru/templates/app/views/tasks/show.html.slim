@@ -1,0 +1,22 @@
+h1
+  | Task details!
+h4
+  = @task.name
+p
+  = @task.description
+p
+  |  Creator: 
+  = @task.creator
+p
+  | Status: 
+  = @task.status
+p
+  | Creator: 
+  = @task.creator
+p
+  | Performer: 
+  = @task.performer
+hr
+= link_to '< Back', root_path
+= link_to 'Edit', edit_task_path(@task)
+= button_to 'Delete', task_path(@task), method: :delete, data: { confirm: "Are you sure?" }
