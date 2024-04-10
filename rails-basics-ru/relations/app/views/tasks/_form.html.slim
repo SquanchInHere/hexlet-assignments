@@ -2,8 +2,8 @@
   = f.input :name
   = f.input :description
   = f.association :status do |a|
-    = a.input :id, collection: Status.all, label_method: :name, value_method: :id, include_blank: "Select Status", selected: task.status.try(:id)
+    = a.input :id, collection: Status.all, label_method: :name, value_method: :id, include_blank: 'Select Status', selected: task.status.try(:id)
   = f.association :user do |a|
-    = a.input :id, collection: User.all, label_method: :name, value_method: :id, include_blank: "Select User", selected: task.user.try(:id)
+    = a.input :id, collection: User.all, label_method: :name, value_method: :id, include_blank: 'Select User', selected: task.user.try(:id)
 
   = f.submit :submit, class: 'btn btn-success mt-4 btn-block'
