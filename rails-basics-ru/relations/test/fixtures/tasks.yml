@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Task One
+  description: Task One Description
+  user: john
+  status: new
+
+two:
+  name: Task Two
+  description: Task Two Description
+  user: jane
+  status: in_progress
