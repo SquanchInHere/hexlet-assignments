@@ -1,0 +1,27 @@
+- content_for :title do
+  = @post.title
+p
+  strong.me-2 Body:
+  = @post.body
+
+p
+  strong.me-2 Comments:
+  - @post.post_comments.each do |comment|
+    .card.mb-4
+      h5.card-header
+        = comment.created_at
+      .card-body
+        p.card-text
+          = comment.comment
+        = link_to 'Edit', edit_post_comment_path(@post, comment), class: 'link-primary p-1'
+        = link_to 'Destroy', post_comment_path(@post, comment), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'link-danger p-1'
+
+hr
+
+h3
+  = render 'comment/form', comment: @comment, url: post_comment_index_path(@post)
+hr
+
+.d-flex
+  = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
+  = link_to 'Back', :back, class: 'btn btn-outline-primary'
