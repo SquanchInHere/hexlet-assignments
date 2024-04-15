@@ -7,7 +7,7 @@ en:
       post/comment: Comment
     attributes:
       post:
-        title: Post title
+        title: Title
         body: Post body
 
       post/comment:
@@ -17,6 +17,5 @@ en:
       models:
         post:
           attributes:
-            # BEGIN
-
-            # END
+            title:
+              blank: should be filled

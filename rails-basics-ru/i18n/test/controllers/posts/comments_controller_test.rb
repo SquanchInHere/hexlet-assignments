@@ -13,7 +13,7 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create comment' do
     params = { post_comment: @comment_params }
-    post(post_comments_url(@post, locale: :en), params:)
+    post post_comments_url(@post, locale: :en), params: params
 
     comment = @post.comments.find_by @comment_params
 
@@ -29,7 +29,7 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update comment' do
     params = { post_comment: @comment_params }
-    patch(post_comment_url(@post, @comment, locale: :en), params:)
+    patch post_comment_url(@post, @comment, locale: :en), params: params
 
     @comment.reload
 

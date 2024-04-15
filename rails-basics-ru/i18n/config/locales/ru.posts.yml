@@ -1,20 +1,33 @@
 ---
 ru:
   posts:
+    create:
+      success: Пост создан.
+    update:
+      success: Пост обновлен.
+    destroy:
+      success: Пост удален.
+
     index:
-      title: Заголовок
-      actions: Действия с постом
       comments:
         zero: нет комментариев
         one: 1 комментарий
         few: "%{count} комментария"
+        many: "%{count} комментариев"
         other: "%{count} комментариев"
+      title: Посты
+      actions: Действия с постом
+      new_post: Новый пост
 
     edit:
       title: Обновить пост
 
     new:
-      title: Создать новый пост
+      title: Новый пост
+
+    form:
+      new_post: Создать Пост
+      placeholder: Название
 
     comments:
       edit:
@@ -25,3 +38,6 @@ ru:
 
       update:
         success: Комментарий обновлен.
+    show:
+      body: Текст поста
+      comments: Комментарии

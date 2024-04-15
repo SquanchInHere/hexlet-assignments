@@ -1,18 +1,32 @@
 en:
   posts:
+    create:
+      success: Post was created.
+    update:
+      success: Post was updated.
+    destroy:
+      success: Post was destroyed.
+
     index:
-      title: Title
-      actions: Actions
       comments:
         zero: No Comments
         one: 1 comment
         few: "%{count} comments"
+        many: "%{count} comments"
         other: "%{count} comments"
+      title: Posts
+      actions: Actions
+      new_post: New Post
+
     edit:
       title: Edit post
 
     new:
-      title: Create new post
+      title: New Post
+
+    form:
+      new_post: Create Post
+      placeholder: Enter post title
 
     comments:
       edit:
@@ -23,3 +37,7 @@ en:
 
       update:
         success: Comment was updated.
+
+    show:
+      body: Post Body
+      comments: Comments

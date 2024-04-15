@@ -7,14 +7,10 @@ ru:
     application:
       hexlet_title: Хекслет, %{year}
 
-  title: Название поста
-  comment_count: Количество комментариев
-  create_new: Создать новый
-  create: Создать
-  update: Обновить
   show: Посмотреть
   edit: Редактировать
   destroy: Удалить
   destroy_confirmation: Вы уверены?
   back: Вернутся
   home_page: Домашняя страница
+  home: Домой

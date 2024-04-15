@@ -5,7 +5,7 @@ ru:
 
     attributes:
       post:
-        title: Заголовок поста
+        title: Название
         body: Содержание поста
 
       post/comment:
@@ -15,6 +15,5 @@ ru:
       models:
         post:
           attributes:
-            # BEGIN
-            
-            # END
+            title:
+              blank: Должно быть заполнено

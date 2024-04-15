@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root 'home#index'
 
     resources :posts do
-
+      resources :comments, module: :posts
     end
   end
 end

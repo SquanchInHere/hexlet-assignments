@@ -8,8 +8,5 @@ en:
     error_notification:
       default_message: "Please check the problems:"
     placeholders:
-      # BEGIN
-      
-      # END
       post_comment:
         body: Enter comment body

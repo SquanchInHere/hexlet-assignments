@@ -38,14 +38,10 @@ en:
     application:
       hexlet_title: Hexlet, %{year}
 
-  title: Title
-  comment_count: Comments counts
-  create: Create new
-  update: Update
-  create_new: Create New
   show: Show
   edit: Edit
   destroy: Delete
   destroy_confirmation: Are you sure?
   back: Back
-  home_page: Home Page
+  home_page: Home page
+  home: Home
