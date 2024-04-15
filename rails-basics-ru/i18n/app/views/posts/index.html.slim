@@ -1,0 +1,30 @@
+- content_for :title do
+  / page title (h1)
+  / BEGIN
+  
+  / END
+
+table.table.table-striped.table-hover.mb-5
+  thead
+    tr
+      th{ scope = 'col' } #
+      th{ scope = 'col' }
+        = t('.title')
+      th
+      th
+        = t('.actions')
+
+  tbody
+    - @posts.each_with_index do |post, i|
+      tr
+        th{ scope = 'row' } = i + 1
+        td = post.title
+        td
+          = t('.comments', count: post.comments.count)
+        td.d-flex
+          = link_to t('show'), post_path(post), class: 'p-1'
+          = link_to t('edit'), edit_post_path(post), class: 'p-1'
+          = link_to t('destroy'), post_path(post), data: { turbo_method: :delete, turbo_confirm: t('destroy_confirmation') }, class: 'p-1 link-danger'
+= link_to new_post_path, id: 'new-post-link', class: 'btn btn-primary' do
+    span
+      = t('create_new')

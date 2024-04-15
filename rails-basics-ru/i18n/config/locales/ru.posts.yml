@@ -1,0 +1,27 @@
+---
+ru:
+  posts:
+    index:
+      title: Заголовок
+      actions: Действия с постом
+      comments:
+        zero: нет комментариев
+        one: 1 комментарий
+        few: "%{count} комментария"
+        other: "%{count} комментариев"
+
+    edit:
+      title: Обновить пост
+
+    new:
+      title: Создать новый пост
+
+    comments:
+      edit:
+        title: Изменить комментарий
+
+      create:
+        success: Комментарий создан.
+
+      update:
+        success: Комментарий обновлен.

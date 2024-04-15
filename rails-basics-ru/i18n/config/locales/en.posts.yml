@@ -1,0 +1,25 @@
+en:
+  posts:
+    index:
+      title: Title
+      actions: Actions
+      comments:
+        zero: No Comments
+        one: 1 comment
+        few: "%{count} comments"
+        other: "%{count} comments"
+    edit:
+      title: Edit post
+
+    new:
+      title: Create new post
+
+    comments:
+      edit:
+        title: Editing comment
+
+      create:
+        success: Comment was created.
+
+      update:
+        success: Comment was updated.
