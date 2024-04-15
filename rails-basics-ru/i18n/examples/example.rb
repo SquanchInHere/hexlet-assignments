@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     cookies[:locale] = I18n.locale
   end
 
-  def set_locale_domain(&action)
+  def set_locale_domain
     # http://en.example.com
     # http://ru.example.com
     locale = request.subdomains.first
@@ -55,7 +55,6 @@ class ApplicationController < ActionController::Base
   end
 end
 
-
 # config/routes.rb
 Rails.application.routes.draw do
   scope '/(:locale)', locale: /en|ru/ do
@@ -65,9 +64,9 @@ Rails.application.routes.draw do
 end
 
 # config/application.rb
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -83,7 +82,7 @@ module I18nApp
     config.I18n.default_locale = :ru # :en
 
     # Разрешенные локали
-    config.I18n.available_locales = [:en, :ru]
+    config.I18n.available_locales = %i[en ru]
     # Указать путь, откуда будут загружаться локали
     # Rails.root возвращает полный путь до проекта
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]

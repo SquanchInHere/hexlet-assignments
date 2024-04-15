@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
     cookies[:locale] = I18n.locale
   end
 
-  def set_locale_domain(&action)
+  def set_locale_domain
     # http://en.example.com
     # http://ru.example.com
     locale = request.subdomains.first
