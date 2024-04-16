@@ -9,7 +9,7 @@ class ImportUsersTest < ActiveSupport::TestCase
   end
 
   test 'import users' do
-    test_dir_path = File.dirname(File.dirname(__FILE__))
+    test_dir_path = File.dirname(__FILE__, 2)
     path = File.join test_dir_path, 'fixtures/files/users.csv'
 
     initial_user_count = User.count
