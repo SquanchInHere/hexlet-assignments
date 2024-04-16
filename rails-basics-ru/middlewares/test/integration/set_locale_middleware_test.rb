@@ -10,17 +10,15 @@ class SetLocaleMiddlewareTest < ActionDispatch::IntegrationTest
   end
 
   test 'switch to en' do
-    env = env_for('http://localhost',
-                  'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8')
-    @middleware.call env
+    @middleware.call env_for('http://localhost',
+                             'HTTP_ACCEPT_LANGUAGE' => 'en,ru;q=0.9,en-US;q=0.8')
 
     assert { I18n.locale == :en }
   end
 
   test 'switch to ru' do
-    env = env_for('http://localhost',
-                  'HTTP_ACCEPT_LANGUAGE' => 'ru,en;q=0.9,en-US;q=0.8')
-    @middleware.call env
+    @middleware.call env_for('http://localhost',
+                             'HTTP_ACCEPT_LANGUAGE' => 'ru,en;q=0.9,en-US;q=0.8')
 
     assert { I18n.locale == :ru }
   end

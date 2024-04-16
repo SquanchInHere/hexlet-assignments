@@ -8,11 +8,10 @@ class SetLocaleMiddleware
   def call(env)
     locale = extract_locale_from_header(env)
     locale ||= I18n.default_locale.to_s
-    locale = available_locale(locale) || I18n.default_locale.to_s
+    locale ||= available_locale(locale) || I18n.default_locale.to_s
 
-    I18n.with_locale(locale) do
-      @app.call(env)
-    end
+    I18n.locale = locale
+    @app.call(env)
   end
 
   private
