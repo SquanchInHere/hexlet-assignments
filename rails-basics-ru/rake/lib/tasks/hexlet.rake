@@ -10,5 +10,4 @@ namespace :hexlet do
       User.create!(row)
     end
   end
-
 end
