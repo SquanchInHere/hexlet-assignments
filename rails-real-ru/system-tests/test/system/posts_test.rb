@@ -2,7 +2,7 @@
 
 require 'application_system_test_case'
 
-class PostTest < ApplicationSystemTestCase
+class PostsTest < ApplicationSystemTestCase
   setup do
     @post = posts(:two)
 
