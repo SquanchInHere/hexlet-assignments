@@ -34,9 +34,7 @@ class PostTest < ApplicationSystemTestCase
   test 'show post' do
     visit posts_url
 
-    within('table tbody tr:first-child') do
-      click_on 'Show'
-    end
+    click_on 'Show', match: :first
 
     assert_selector 'h1', text: @post.title
   end
@@ -58,13 +56,21 @@ class PostTest < ApplicationSystemTestCase
   test 'update a post' do
     visit posts_url
 
-    within('table tbody tr:first-child') do
-      click_on 'Edit'
-    end
+    click_on 'Edit', match: :first
 
     fill_in 'Title', with: Faker::Book.title
     click_on 'Update Post'
 
     assert_text 'Post was successfully updated'
+  end
+
+  test 'destroy a post' do
+    visit posts_url
+
+    page.accept_confirm do
+      click_on 'Destroy', match: :first
+    end
+
+    assert_text 'Post was successfully destroyed.'
   end
 end
