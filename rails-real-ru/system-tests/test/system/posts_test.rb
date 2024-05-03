@@ -31,7 +31,7 @@ class PostTest < ApplicationSystemTestCase
     assert_text 'Post was successfully created'
   end
 
-  test'show post' do
+  test 'show post' do
     visit posts_url
 
     within('table tbody tr:first-child') do
