@@ -47,7 +47,6 @@
 # end
 # end
 
-
 # Если нет конкретного инстанса для которого нужно проверить права, можно проверить права по имени класса
 # class PostPolicy < ApplicationPolicy
 #   def admin_list?
