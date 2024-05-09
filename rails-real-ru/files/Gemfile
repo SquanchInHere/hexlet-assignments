@@ -3,6 +3,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'active_storage_validations'
+gem 'aws-sdk-s3'
+gem 'file_validators'
+gem 'image_processing'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.1'
 # Use Puma as the app server
@@ -67,7 +72,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'active_storage_validations'
-gem 'aws-sdk-s3'
-gem 'file_validators'
-gem 'image_processing'
