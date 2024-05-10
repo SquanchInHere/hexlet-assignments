@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2022_09_20_191005) do
-  create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "password_digest", null: false
-    t.string "aasm_state"
-    t.string "confirmation_token"
-    t.datetime "aconfirmed_at", precision: nil
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema[7.1].define(version: 20_220_920_191_005) do
+  create_table 'users', force: :cascade do |t|
+    t.string 'name', null: false
+    t.string 'email', null: false
+    t.string 'password_digest', null: false
+    t.string 'aasm_state'
+    t.string 'confirmation_token'
+    t.datetime 'aconfirmed_at', precision: nil
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

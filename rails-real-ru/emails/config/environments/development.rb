@@ -39,7 +39,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # BEGIN
-  
+
   # END
 
   # Print deprecation notices to the Rails logger.

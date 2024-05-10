@@ -61,9 +61,16 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # BEGIN
-  
-  # END
+  config.action_mailer.default_url_options = { host: ENV.fetch('APP_HOST', nil) }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: ENV.fetch('MAIL_USERNAME', nil),
+    password: ENV.fetch('MAIL_PASSWORD', nil),
+    address: ENV.fetch('MAIL_HOST', nil),
+    domain: ENV.fetch('MAIL_HOST', nil),
+    port: ENV.fetch('SMTP_PORT', '25'),
+    authentication: :cram_md5
+  }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
@@ -90,16 +97,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.default_url_options = { host: ENV['APP_HOST'] }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    user_name: ENV['MAIL_USERNAME'],
-    password: ENV['MAIL_PASSWORD'],
-    address: ENV['MAIL_HOST'],
-    domain: ENV['MAIL_HOST'],
-    port: ENV['SMTP_PORT'] || '25',
-    authentication: :cram_md5
-  }
 end
 # rubocop:enable Metrics/BlockLength
