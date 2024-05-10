@@ -1,0 +1,7 @@
+h1
+  = t('congratulation', user_name: @user.name)
+
+p
+  = t('welcome_text')
+
+= link_to "#{@url}/user/confirm?confirmation_token=#{@user.confirmation_token}", t('confirm')
