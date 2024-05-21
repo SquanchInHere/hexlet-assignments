@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RepositoryLoaderJob < ApplicationJob
   queue_as :default
 
@@ -6,7 +8,7 @@ class RepositoryLoaderJob < ApplicationJob
     repository.start_fetching!
 
     begin
-      client = Octokit::Client.new(access_token: ENV['GITHUB_ACCESS_TOKEN'])
+      client = Octokit::Client.new(access_token: ENV.fetch('GITHUB_ACCESS_TOKEN', nil))
       repo_data = client.repository(Octokit::Repository.from_url(repository.link))
 
       repository.update!(
@@ -17,10 +19,10 @@ class RepositoryLoaderJob < ApplicationJob
         watchers_count: repo_data.watchers_count,
         language: repo_data.language,
         repo_created_at: repo_data.created_at,
-        repo_updated_at: repo_data.updated_at,
+        repo_updated_at: repo_data.updated_at
       )
       repository.fetch_success!
-    rescue => e
+    rescue StandardError => e
       repository.fetch_fail!
       Rails.logger.error "Failed to fetch repository data: #{e.message}"
     end

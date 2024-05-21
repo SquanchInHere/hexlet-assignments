@@ -12,7 +12,7 @@ class Repository < ApplicationRecord
     state :failed
 
     event :start_fetching do
-      transitions from: [:created, :failed, :fetched], to: :fetching, unless: :fetching?
+      transitions from: %i[created failed fetched], to: :fetching, unless: :fetching?
     end
 
     event :fetch_success do
@@ -25,6 +25,6 @@ class Repository < ApplicationRecord
   end
 
   def fetch_data
-    RepositoryLoaderJob.perform_later(self.id)
+    RepositoryLoaderJob.perform_later(id)
   end
 end
