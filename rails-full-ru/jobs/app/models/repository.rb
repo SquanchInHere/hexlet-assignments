@@ -25,6 +25,6 @@ class Repository < ApplicationRecord
   end
 
   def fetch_data
-    RepositoryLoaderJob.perform_later(id)
+    RepositoryLoaderJob.perform_now(id)
   end
 end
