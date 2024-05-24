@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  mount Blog::Engine => '/blog'
   mount RailsStats::Engine => '/stats'
 
   scope module: :web do
